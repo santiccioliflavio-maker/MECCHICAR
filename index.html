@@ -44,4 +44,107 @@
             border-radius: 15px; cursor: pointer; transition: 0.4s; position: relative; overflow: hidden;
         }
         .card:hover { border-color: var(--ferrari-red); transform: translateY(-10px); background: #2a2a2a; }
-        .card h3 { color: var(--gold); margin-top: 0;
+        .card h3 { color: var(--gold); margin-top: 0; font-size: 1.8rem; }
+        .price { font-size: 1.5rem; font-weight: bold; color: var(--ferrari-red); margin: 15px 0; }
+        .specs-list { display: none; text-align: left; font-size: 0.95rem; line-height: 1.6; border-top: 1px solid #444; padding-top: 15px; color: #ccc; }
+        .card.active .specs-list { display: block; }
+        .card.active { border-width: 3px; border-color: var(--ferrari-red); box-shadow: 0 0 30px rgba(204, 0, 0, 0.3); }
+
+        /* Storia */
+        .storia-text { max-width: 800px; margin: 0 auto; font-size: 1.2rem; line-height: 1.8; color: #ddd; font-style: italic; }
+        
+        footer { padding: 40px; background: #000; font-size: 0.9rem; color: #555; }
+    </style>
+</head>
+<body>
+
+    <div class="home-screen">
+        <img src="logo.png" alt="Mecchicar Logo" class="logo">
+        <div class="nav-links">
+            <a href="#scheda" class="btn">MODELLI: M26</a>
+            <a href="#configura" class="btn">CONFIGURA</a>
+            <a href="#storia" class="btn">LA NOSTRA STORIA</a>
+        </div>
+    </div>
+
+    <div id="scheda" class="section">
+        <h2>M26 "Mecchicar"</h2>
+        <img src="m26.png" alt="M26 Racing Edition" class="car-image">
+        <p style="font-size: 1.4rem; max-width: 700px; margin: 0 auto;">
+            L'apice dell'ingegneria italiana. Nata per dominare, progettata per emozionare. 
+            Scopri le prestazioni del motore V10 Bi-Turbo da 1120cv.
+        </p>
+    </div>
+
+    <div id="configura" class="dark-section">
+        <h2>Configura la tua M26</h2>
+        <p>Seleziona un allestimento per vedere i dettagli</p>
+        
+        <div class="config-container">
+            <div class="card" onclick="toggleCard(this)">
+                <h3>BASE</h3>
+                <div class="price">30.000€</div>
+                <div class="specs-list">
+                    • Motore V10 Bi-Turbo 1120cv<br>
+                    • Telaio standard alleggerito<br>
+                    • Cerchi in lega sportivi<br>
+                    • Cambio sequenziale 7 marce<br>
+                    • Tasso agevolato 0,5%
+                </div>
+                <p style="font-size: 0.8rem; color: var(--ferrari-red);">Clicca per dettagli</p>
+            </div>
+
+            <div class="card" onclick="toggleCard(this)">
+                <h3>PRO</h3>
+                <div class="price">50.000€</div>
+                <div class="specs-list">
+                    • <b>TUTTO IL TELAIO IN CARBONIO</b><br>
+                    • <b>Motore Forgiato</b> rinforzato<br>
+                    • Impianto frenante da gara<br>
+                    • Assetto sportivo regolabile<br>
+                    • Pneumatici Slick di serie
+                </div>
+                <p style="font-size: 0.8rem; color: var(--ferrari-red);">Clicca per dettagli</p>
+            </div>
+
+            <div class="card" onclick="toggleCard(this)">
+                <h3>PREMIUM</h3>
+                <div class="price">Su richiesta</div>
+                <div class="specs-list">
+                    • Tutto il pacchetto PRO più:<br>
+                    • <b>Turbo Garrett maggiorati</b><br>
+                    • Freni <b>Brembo</b> Carboceramici<br>
+                    • Scarico diretto in Titanio<br>
+                    • <b>Omologazione stradale</b><br>
+                    • Interni Sparco (sedili, volante)<br>
+                    • Impianto audio Hi-Fi Bose
+                </div>
+                <p style="font-size: 0.8rem; color: var(--ferrari-red);">Clicca per dettagli</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="storia" class="dark-section" style="background: #111; border-top: 1px solid #333;">
+        <h2>La nostra storia</h2>
+        <div class="storia-text">
+            <p>"Siamo nati nel 2025 in collaborazione con il **PLM (Partito Lorenzo Mecchi)**, 
+            una sinergia che ha riscritto le regole dell'automobilismo. Grazie al supporto tecnologico 
+            e alla visione del PLM, abbiamo raggiunto l'impossibile: vincere il campionato mondiale di Formula 1 
+            al nostro debutto. La M26 è il frutto di questa vittoria politica e sportiva."</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Mecchicar S.p.A. - In collaborazione con PLM Group. All rights reserved.
+    </footer>
+
+    <script>
+        function toggleCard(card) {
+            document.querySelectorAll('.card').forEach(c => {
+                if(c !== card) c.classList.remove('active');
+            });
+            card.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
