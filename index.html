@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mecchicar Official Store</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        .home-screen {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle, #ff1a1a 0%, #990000 100%);
+            color: white;
+        }
+        .logo {
+            width: 300px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        .logo:hover { transform: scale(1.05); }
+        
+        .modelli-link {
+            font-size: 2rem;
+            color: gold;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid gold;
+            padding: 10px 30px;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+        .modelli-link:hover {
+            background-color: gold;
+            color: #990000;
+        }
+
+        #scheda-tecnica {
+            display: none;
+            padding: 50px 20px;
+            background: white;
+        }
+
+        .car-image {
+            max-width: 800px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .price-tag {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            color: #d40000;
+            font-weight: bold;
+        }
+
+        table {
+            margin: 30px auto;
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 600px;
+        }
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th { background-color: #f8f8f8; }
+    </style>
+</head>
+<body>
+
+    <div class="home-screen" id="home">
+        <img src="https://r.jina.ai/i/0586f1f6c77d403681a95221975e5f5f" alt="Logo Mecchi" class="logo">
+        <a href="#scheda-tecnica" class="modelli-link" onclick="showSpecs()">Modelli: M26</a>
+    </div>
+
+    <div id="scheda-tecnica">
+        <h1>M26 "Mecchicar"</h1>
+        <img src="https://r.jina.ai/i/6f9035251a37494480d19f85c325883d" alt="M26 Mecchicar" class="car-image">
+        
+        <p class="price-tag">
+            M26 l'eleganza sportiva tua a soli 30.000€ <br>
+            <span style="font-size: 1.1rem; color: #555;">pagabili in comode rate a tasso 0,5%</span>
+        </p>
+
+        <table>
+            <tr><th>Modello</th><td>M26</td></tr>
+            <tr><th>Motore</th><td>V10 (MECCHICAR) BI-TURBO 1120cv</td></tr>
+            <tr><th>Peso</th><td>250 kg</td></tr>
+            <tr><th>FIA Approved</th><td>Sì</td></tr>
+            <tr><th>0-100 km/h</th><td>1.115 s</td></tr>
+            <tr><th>Coppia</th><td>1000NM (A 15000 GIRI)</td></tr>
+            <tr><th>Top Speed</th><td>400+ km/h</td></tr>
+        </table>
+        
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="padding: 10px 20px; cursor: pointer;">Torna su</button>
+    </div>
+
+    <script>
+        function showSpecs() {
+            document.getElementById('scheda-tecnica').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('scheda-tecnica').scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+    </script>
+</body>
+</html>
