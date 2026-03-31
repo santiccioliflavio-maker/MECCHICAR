@@ -3,116 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mecchicar Official Store</title>
+    <title>Mecchicar Official Store | Rosso Corsa</title>
     <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+        :root {
+            --ferrari-red: #CC0000;
+            --dark-red: #8B0000;
+            --gold: #FFD700;
+        }
+        body { margin: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #111; color: white; scroll-behavior: smooth; }
+        
+        /* Home Screen */
+        .home-screen {
+            height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            background: linear-gradient(135deg, var(--ferrari-red) 0%, #4a0000 100%);
             text-align: center;
         }
-        .home-screen {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: radial-gradient(circle, #ff1a1a 0%, #990000 100%);
-            color: white;
-        }
-        .logo {
-            width: 300px;
-            margin-bottom: 20px;
-            transition: transform 0.3s;
-        }
+        .logo { width: 320px; max-width: 85%; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5)); transition: 0.4s; }
         .logo:hover { transform: scale(1.05); }
         
-        .modelli-link {
-            font-size: 2rem;
-            color: gold;
-            text-decoration: none;
-            font-weight: bold;
-            border: 2px solid gold;
-            padding: 10px 30px;
-            border-radius: 50px;
-            transition: 0.3s;
+        .nav-links { margin-top: 30px; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        .btn {
+            font-size: 1.2rem; color: var(--gold); text-decoration: none; font-weight: bold;
+            border: 2px solid var(--gold); padding: 12px 35px; border-radius: 5px;
+            transition: 0.3s; cursor: pointer; background: transparent;
         }
-        .modelli-link:hover {
-            background-color: gold;
-            color: #990000;
+        .btn:hover { background: var(--gold); color: black; box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); }
+
+        /* Sections */
+        .section { padding: 80px 20px; background: white; color: #111; }
+        .dark-section { padding: 80px 20px; background: #1a1a1a; color: white; }
+        h2 { font-size: 2.5rem; color: var(--ferrari-red); margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px; }
+
+        .car-image { max-width: 1000px; width: 100%; border-radius: 10px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); margin-bottom: 40px; }
+
+        /* Configuratore */
+        .config-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
+        .card {
+            background: #222; border: 1px solid #444; padding: 30px; width: 280px;
+            border-radius: 15px; cursor: pointer; transition: 0.4s; position: relative; overflow: hidden;
         }
-
-        #scheda-tecnica {
-            display: none;
-            padding: 50px 20px;
-            background: white;
-        }
-
-        .car-image {
-            max-width: 800px;
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .price-tag {
-            font-size: 1.5rem;
-            margin: 20px 0;
-            color: #d40000;
-            font-weight: bold;
-        }
-
-        table {
-            margin: 30px auto;
-            border-collapse: collapse;
-            width: 80%;
-            max-width: 600px;
-        }
-        th, td {
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-        }
-        th { background-color: #f8f8f8; }
-    </style>
-</head>
-<body>
-
-    <div class="home-screen" id="home">
-        <img src="img src="https://r.jina.ai/i/0586f1f6c77d403681a95221975e5f5f" alt="Logo Mecchi" class="logo"">
-        <a href="#scheda-tecnica" class="modelli-link" onclick="showSpecs()">Modelli: M26</a>
-    </div>
-
-    <div id="scheda-tecnica">
-        <h1>M26 "Mecchicar"</h1>
-        <img src="https://r.jina.ai/i/6f9035251a37494480d19f85c325883d">
-        
-        <p class="price-tag">
-            M26 l'eleganza sportiva tua a soli 30.000€ <br>
-            <span style="font-size: 1.1rem; color: #555;">pagabili in comode rate a tasso 0,5%</span>
-        </p>
-
-        <table>
-            <tr><th>Modello</th><td>M26</td></tr>
-            <tr><th>Motore</th><td>V10 (MECCHICAR) BI-TURBO 1120cv</td></tr>
-            <tr><th>Peso</th><td>250 kg</td></tr>
-            <tr><th>FIA Approved</th><td>Sì</td></tr>
-            <tr><th>0-100 km/h</th><td>1.115 s</td></tr>
-            <tr><th>Coppia</th><td>1000NM (A 15000 GIRI)</td></tr>
-            <tr><th>Top Speed</th><td>400+ km/h</td></tr>
-        </table>
-        
-        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="padding: 10px 20px; cursor: pointer;">Torna su</button>
-    </div>
-
-    <script>
-        function showSpecs() {
-            document.getElementById('scheda-tecnica').style.display = 'block';
-            setTimeout(() => {
-                document.getElementById('scheda-tecnica').scrollIntoView({ behavior: 'smooth' });
-            }, 100);
-        }
-    </script>
-</body>
-</html>
+        .card:hover { border-color: var(--ferrari-red); transform: translateY(-10px); background: #2a2a2a; }
+        .card h3 { color: var(--gold); margin-top: 0;
